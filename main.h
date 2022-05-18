@@ -113,7 +113,7 @@ int _strspn(char *s, char *accept);
 /*aux_mem.c*/
 void _memcpy(void *newptr, const void *ptr, unsigned int size);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char **_reallocp(char **ptr, unsigned int old_size, unsigned int new_size);
+char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
 
 /*aux_str2.c*/
 char *_strdup(const char *s);
@@ -142,7 +142,7 @@ char *read_line(int *i_eof);
 /*split.c */
 char *swap_char(char *input, int bool);
 void add_nodes(sep_list **head_s, line_list **head_l, char *input);
-void go_next(sept_list **list_s, line_list **list_l, data_shell *datash);
+void go_next(sep_list **list_s, line_list **list_l, data_shell *datash);
 int split_commands(data_shell *datash, char *input);
 char **split_line(char *input);
 
@@ -175,6 +175,12 @@ char *copy_info(char *name, char *value);
 void set_env(char *name, char *value, data_shell *datash);
 int _setenv(data_shell *datash);
 int _unsetenv(data_shell *datash);
+
+/*cd.c*/
+void cd_dot(data_shell *datash);
+void cd_to(data_shell *datash);
+void cd_previous(data_shell *datash);
+void cd_to_home(data_shell *datash);
 
 /*cd_shell.c*/
 int cd_shell(data_shell *datash);
@@ -213,6 +219,8 @@ void get_sigint(int sig);
 void aux_help_env(void);
 void aux_help_setenv(void);
 void aux_help_unsetenv(void);
+void aux_help_general(void);
+void aux_help_exit(void);
 
 /*aux_help2.c*/
 void aux_help(void);
