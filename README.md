@@ -1,1 +1,3 @@
-# My Readme
+# Simple Shell
+
+### Repo will be updated
